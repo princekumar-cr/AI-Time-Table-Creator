@@ -1,0 +1,201 @@
+Build a professional full-stack web application named "AI Timetable Creator".
+
+Tech Stack:
+- Frontend: HTML5, CSS3, TailwindCSS, Vanilla JS (or minimal JS)
+- Backend: Golang (Gin or Fiber framework preferred)
+- Database: PostgreSQL or MySQL
+- AI Integration: OpenAI API for timetable auto-generation
+- Architecture: Clean MVC structure
+
+Goal:
+Create a smart AI-based timetable management system for colleges, universities, and schools where teachers or timetable coordinators can easily generate optimized timetables using AI.
+
+=====================================================
+CORE FEATURES
+=====================================================
+
+1. Authentication System
+- Admin login
+- Teacher login
+- Role-based access
+- JWT authentication
+
+2. Dashboard (Modern Sidebar Layout)
+Left Sidebar:
+- Dashboard
+- Create Timetable
+- AI Generate Timetable
+- Teachers Management
+- Subjects Management
+- Rooms Management
+- Sections / Classes
+- Labs Management
+- Constraints Settings
+- Export (PDF/Excel)
+- Settings
+- Logout
+
+3. Create Timetable (Manual Mode)
+Form Inputs:
+- College Name
+- Course Name (e.g., BCA)
+- Year / Semester
+- Section (A/B/C)
+- Working Days (Mon-Sat)
+- Period Timing (P1, P2…)
+- Break Timing
+- Number of Periods per Day
+
+Dynamic Input Sections:
+- Add Multiple Subjects
+    - Subject Name
+    - Subject Code
+    - Subject Type (Theory / Lab)
+    - Faculty Name
+    - Weekly Hours Required
+- Add Multiple Teachers
+- Add Multiple Rooms
+- Add Lab Rooms
+
+4. AI Timetable Generator
+
+Include a large text area labeled:
+"Describe Constraints / Preferences"
+
+Example:
+- Teacher unavailable on Tuesday
+- Lab requires 2 consecutive periods
+- Max 2 theory classes per day
+- Avoid last period for OS
+
+Button:
+[ Generate Timetable Using AI ]
+
+Backend:
+- Send structured JSON to OpenAI
+- AI returns optimized timetable in structured JSON format
+- Parse and render in table format like:
+
+Days | P1 | P2 | P3 | P4 | P5 | P6
+------------------------------------
+Monday | CN | OS | JAVA | BREAK | IOT | LAB
+Tuesday | ...
+
+5. Smart Conflict Detection
+- Prevent teacher double booking
+- Prevent room clash
+- Prevent lab mismatch
+- Show red warning if conflict found
+
+6. Export Features
+- Download as PDF
+- Download as Excel
+- Print View
+- Share Link (Public View Only)
+
+7. UI/UX Requirements
+
+Design:
+- Clean modern dashboard (like admin panel SaaS)
+- Sidebar dark theme
+- Main content light theme
+- Rounded cards
+- Smooth transitions
+- Responsive for mobile + desktop
+- Use icons (Lucide or Heroicons)
+
+8. Advanced Options
+
+Constraints Settings Page:
+- Max lectures per teacher per day
+- Max lectures per subject per day
+- Consecutive lab rules
+- Lunch break auto insertion
+- Holiday management
+- Custom time slots
+
+9. Database Tables
+
+Users
+Teachers
+Subjects
+Rooms
+Labs
+Sections
+Timetables
+Constraints
+
+10. API Structure (Go)
+
+POST /api/login
+POST /api/teachers
+POST /api/subjects
+POST /api/generate-ai-timetable
+GET /api/timetable/:id
+PUT /api/timetable/:id
+DELETE /api/timetable/:id
+
+=====================================================
+AI PROMPT STRUCTURE (IMPORTANT)
+=====================================================
+
+When calling OpenAI, send prompt like:
+
+"You are an academic timetable optimization engine.
+Generate a weekly timetable for the following data:
+
+College: {{college_name}}
+Course: {{course}}
+Semester: {{semester}}
+Section: {{section}}
+
+Subjects:
+- Computer Networks (4 hrs/week) – Upasana Rana
+- Operating System (4 hrs/week) – Deepak Kumar Pathak
+- Programming in Java (5 hrs/week) – Anup Chamoli
+- Fundamental of IoT (3 hrs/week) – Divya Pandey
+- Linux Lab (2 consecutive hrs) – Deepak Kumar Pathak
+
+Constraints:
+- No teacher should have overlapping classes
+- Lab must be consecutive
+- Max 2 theory classes per day
+- Working Days: Monday to Friday
+- 6 periods per day
+
+Return only JSON in this format:
+{
+  "Monday": ["Subject-Teacher", "Subject-Teacher", ...],
+  "Tuesday": [...]
+}
+"
+
+=====================================================
+FRONTEND PAGE STRUCTURE
+=====================================================
+
+Pages:
+- index.html (Landing)
+- login.html
+- dashboard.html
+- create-timetable.html
+- ai-generator.html
+- manage-teachers.html
+- manage-subjects.html
+
+=====================================================
+EXTRA PREMIUM FEATURES
+=====================================================
+
+- Drag and drop timetable editor
+- Auto-save drafts
+- Version history
+- Multi-college support
+- Cloud deployment ready
+- Admin analytics (teacher load chart)
+
+=====================================================
+Make the UI extremely clean, professional and SaaS-level quality.
+Use reusable components.
+Code should be modular and production ready.
+

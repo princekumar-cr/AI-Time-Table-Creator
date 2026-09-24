@@ -1,0 +1,242 @@
+# 🚀 AI Timetable Creator – Full Website Rebuild Prompt
+
+## 🎯 Objective
+Rebuild the entire AI Timetable Creator web application into a modern, professional, SaaS-level dashboard with fully working frontend + backend integration.
+
+Tech Stack:
+- Frontend: HTML5 + TailwindCSS + Vanilla JS
+- Backend: Golang (Gin Framework)
+- Database: PostgreSQL or MySQL
+- Authentication: JWT-based
+- API Communication: Fetch API (JSON)
+- Architecture: MVC pattern
+
+---
+
+# 🔥 CORE REQUIREMENTS
+
+## 1️⃣ UI/UX Redesign (Premium SaaS Look)
+
+### Layout Structure
+- Fixed Left Sidebar (Dark theme)
+- Top Navbar with page title + settings icon
+- Main Content Area with proper padding
+- No empty dark spaces
+- All forms wrapped inside card containers
+- Smooth transitions & hover effects
+
+### Sidebar Features
+- Dashboard
+- Timetable View
+- Manual Builder
+- AI Generator
+- Faculty Hub
+- Subject Catalog
+- Campus Rooms
+- Logout
+
+Active state highlight required.
+
+---
+
+# 🧩 Authentication System (Must Work Properly)
+
+### Pages:
+- /login
+- /register
+- /dashboard
+
+### Features:
+- Form validation
+- Proper button click handling
+- API integration
+- Error handling
+- Loading spinner
+- Redirect after login
+- JWT token stored securely
+- Protected routes
+
+---
+
+# 🧠 AI Timetable Generator
+
+### Inputs:
+- College Name
+- Course
+- Semester
+- Section
+- Working Days
+- Periods per day
+- Subject list
+- Faculty list
+- Room list
+- Custom constraints textarea
+
+### Button:
+Generate Timetable
+
+### Backend:
+Send structured prompt to OpenAI:
+- No conflicts
+- Lab consecutive rule
+- Max lectures per day rule
+
+Return structured JSON:
+{
+  "Monday": ["CN - Rana", "OS - Deepak", ...],
+  "Tuesday": [...]
+}
+
+Render into dynamic timetable table.
+
+---
+
+# 🏫 Faculty Hub
+
+Features:
+- Add Faculty
+- Edit Faculty
+- Delete Faculty
+- Faculty load count
+- Assigned subjects
+
+Form should include:
+- Full Name
+- Department
+- Designation
+- Email
+- Phone
+- Max lectures per day
+
+---
+
+# 📘 Subject Catalog
+
+- Add Subject
+- Subject Code
+- Type (Theory / Lab)
+- Weekly Hours
+- Assigned Faculty
+
+---
+
+# 🏢 Campus Rooms
+
+- Add Room
+- Capacity
+- Type (Classroom / Lab)
+- Availability
+
+---
+
+# ⚙ Manual Slot Configurator
+
+- Define working days
+- Define periods
+- Define break time
+- Custom time slots
+
+---
+
+# 📊 Dashboard Overview
+
+Show:
+- Total Faculty
+- Total Subjects
+- Total Rooms
+- Timetables Generated
+- Recent Activity
+
+Use card-based layout.
+
+---
+
+# 🔐 Backend API Structure (Gin)
+
+POST /api/register  
+POST /api/login  
+GET /api/dashboard  
+POST /api/faculty  
+GET /api/faculty  
+PUT /api/faculty/:id  
+DELETE /api/faculty/:id  
+
+POST /api/subjects  
+GET /api/subjects  
+
+POST /api/rooms  
+GET /api/rooms  
+
+POST /api/generate-timetable  
+GET /api/timetable/:id  
+
+---
+
+# 🛠 Technical Requirements
+
+✔ Proper error handling  
+✔ CORS enabled  
+✔ JSON validation  
+✔ Database migrations  
+✔ Clean folder structure  
+
+---
+
+# 📁 Folder Structure
+
+/cmd
+/internal
+/controllers
+/models
+/routes
+/middleware
+/services
+/web
+/templates
+/static
+/css
+/js
+
+
+---
+
+# 💎 Design Rules
+
+- Use rounded-xl cards
+- Use subtle glass effect
+- Avoid empty large dark areas
+- Proper spacing
+- Modern typography
+- Professional dashboard feel
+- Responsive for mobile
+
+---
+
+# 🚀 Advanced Improvements
+
+- Drag & drop timetable editor
+- Export PDF
+- Export Excel
+- Conflict detection
+- Version history
+- Multi-institute support
+- Analytics charts
+
+---
+
+# 🎯 Expected Result
+
+A fully working, production-ready, SaaS-style AI Timetable Creator system where:
+
+✔ Buttons work  
+✔ Forms submit properly  
+✔ Backend connected  
+✔ AI generates structured timetable  
+✔ No UI imbalance  
+✔ Professional quality interface  
+✔ Clean codebase  
+
+---
+
+Build the system as if it is a real commercial EdTech SaaS product.
+Ensure all buttons function correctly and all API routes are properly connected.
